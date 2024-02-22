@@ -1,3 +1,3 @@
 # Run test
 
-npx playwright test
+npx playwright test --grep @regression

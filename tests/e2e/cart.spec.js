@@ -4,7 +4,7 @@ import BedspreadsPage from '../page-objects/pages/bedspreads.page.js';
 import CartPage from '../page-objects/pages/cart.page.js'
 
 test.describe('Add Goode in Cart', () => {
-    test('Add goods from "Catalog"', async ({ page }) => {
+    test('Add goods from "Catalog" @regression', async ({ page }) => {
         const homePage = new HomePage(page);
         await homePage.open();
         await homePage.navigateToCatalogSection("Товары для дома", "Покрывала и пледы");

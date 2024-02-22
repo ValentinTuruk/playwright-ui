@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import SharedData from "../../support/shared-data.helper.js"
 
 export default class BasePage {
@@ -6,9 +7,9 @@ export default class BasePage {
     }
 
     async open(path) {
-        return await this.page.goto(`/${path}`);
+        return await this.page.goto(`${process.env.BASE_URL}/${path}`);
     }
-
+    // TODO: move methods below to Element classes
     getStaticElement(locator) {
         return this.page.locator(locator);
     }

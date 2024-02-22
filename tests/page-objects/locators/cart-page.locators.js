@@ -1,4 +1,4 @@
-export const staticSelectors = {
+export const staticLocators = {
     txtPrice: "//span[@class='cart-item__price']",
     txtGoodsTitleName: "//a[@class='cart-item__text']",
     txtGoodsTitleKit: "//p[@class='cart-item__text cart-item__text--bold']",

@@ -1,4 +1,4 @@
-export const staticSelectors = {
+export const staticLocators = {
     lstBedspreadItems: ".product-card__content",
     txtCurrentPriceOfItems: "//span[contains(@class, 'price-current')]",
     txtTitleNameOfItems: "//div[contains(@class, 'title-name')]",
@@ -7,7 +7,7 @@ export const staticSelectors = {
     sizesListOfCartModal: "//ul[contains(@class, 'options-selector__list')]/li",
 }
 
-export const dynamicSelectors = {
+export const dynamicLocators = {
     btnSelectOfCartModal: "//button[contains(text(), '{0}')]",
     btnGoToCartOfCartModal: "//button[contains(text(), '{0}')]"
 }
