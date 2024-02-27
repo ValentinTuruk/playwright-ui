@@ -58,7 +58,7 @@ export default defineConfig({
     viewport: { width: 1920, height: 1080 },
 
     // Run browser in headless mode.
-    headless: true,
+    headless: false,
 
     screenshot: 'only-on-failure',
   },
