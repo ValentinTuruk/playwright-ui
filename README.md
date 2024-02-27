@@ -1,3 +1,3 @@
 # Run test
 
-npx playwright test --grep @regression
+QASE_REPORT=1 npm run first
