@@ -29,9 +29,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: "20"
     steps:
       - uses: qase-tms/qase-link-run@main
         env:
@@ -39,8 +36,7 @@ jobs:
           BASE_URL: ${{ secrets.BASE_URL }}
           QASE_PROJECT_CODE: ${{ secrets.QASE_PROJECT_CODE }}
       - uses: actions/checkout@v4
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "20"
       - run: npm run regression
