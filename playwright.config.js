@@ -1,5 +1,6 @@
 import { defineConfig, devices } from '@playwright/test';
 import { join } from 'path';
+import 'dotenv/config';
 
 /**
  * @see https://playwright.dev/docs/test-configuration
@@ -13,9 +14,20 @@ export default defineConfig({
   /* Retry on CI only */
   retries: 0,
   /* Opt out of parallel tests on CI. */
-  workers: 1,
+  workers: 2,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter: 'list',
+  reporter: [
+    ['list'],
+    ['playwright-qase-reporter',
+      {
+        apiToken: process.env.QASE_API_TOKEN,
+        projectCode: process.env.QASE_PROJECT_CODE,
+        runComplete: true,
+        basePath: 'https://api.qase.io/v1',
+        logging: true,
+        uploadAttachments: true,
+      }],
+  ],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -47,5 +59,7 @@ export default defineConfig({
 
     // Run browser in headless mode.
     headless: true,
+
+    screenshot: 'only-on-failure',
   },
 });

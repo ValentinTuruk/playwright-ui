@@ -12,6 +12,7 @@ export default class CartPage extends BasePage {
 
     async verifyPriceOfItem() {
         const actualPrice = await this.getStaticElement(staticLocators.txtPrice).innerText();
+        console.log(await actualPrice);
         const actualPriceFormated = await actualPrice.match(/\d+\.\d+\sBYN/)[0];
         expect(actualPriceFormated).toBe(SharedData.currentPrice);
     }
